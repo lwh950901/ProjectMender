@@ -14,6 +14,6 @@ impl CredentialStore for MemoryCredentialStore { fn save(&mut self, reference: &
 pub struct OsCredentialStore;
 impl CredentialStore for OsCredentialStore { fn save(&mut self, reference: &str, secret: &str) -> Result<(), CredentialError> { keyring::Entry::new("com.projectmender", reference).map_err(|_| CredentialError::Unavailable)?.set_password(secret).map_err(|_| CredentialError::Unavailable) } fn is_present(&self, reference: &str) -> Result<bool, CredentialError> { Ok(keyring::Entry::new("com.projectmender", reference).map_err(|_| CredentialError::Unavailable)?.get_password().is_ok()) } fn remove(&mut self, reference: &str) -> Result<(), CredentialError> { keyring::Entry::new("com.projectmender", reference).map_err(|_| CredentialError::Unavailable)?.delete_credential().map_err(|_| CredentialError::Unavailable) } }
 
-#[derive(Serialize)]
+#[derive(Debug, Serialize)]
 pub struct Settings { provider: String, model: String, credential_reference: String }
 impl Settings { pub fn save(store: &mut impl CredentialStore, provider: &str, model: &str, secret: &str) -> Result<Self, CredentialError> { let credential_reference = format!("{}:{}", provider, model); store.save(&credential_reference, secret)?; Ok(Self { provider: provider.into(), model: model.into(), credential_reference }) } pub fn credential_reference(&self) -> &str { &self.credential_reference } }

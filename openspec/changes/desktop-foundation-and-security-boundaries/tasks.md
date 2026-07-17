@@ -19,7 +19,7 @@
 - [x] 3.2 Implement macOS Keychain and Windows Credential Manager adapters behind that interface for save, read-presence, and remove operations.
 - [x] 3.3 Implement settings state that stores only provider, model name, and credential reference metadata; never return or serialize an original key after save.
 - [x] 3.4 Add safe credential-unavailable errors for locked, missing, or rejected credential-facility operations.
-- [ ] 3.5 Add adapter fakes and tests proving API Keys are absent from project files, normal configuration, databases, logs, audit records, errors, reports, and serialized UI state.
+- [x] 3.5 Add adapter fakes and tests proving API Keys are absent from project files, normal configuration, databases, logs, audit records, errors, reports, and serialized UI state.
 
 ## 4. Authorization state and local audit
 
@@ -31,6 +31,7 @@
 ## 5. Security hardening and phase verification
 
 - [x] 5.1 Configure the Tauri command and capability surface so only phase-1 approved commands are reachable from the UI.
-- [ ] 5.2 Verify phase-1 build and runtime configuration contains no network client, child-process launcher, model provider, scanner, patch writer, or project write handler.
-- [ ] 5.3 Run the requirement scenarios on macOS Apple Silicon and Windows 11 x64, including unavailable data directory and credential facility cases.
-- [x] 5.4 Document the verified phase-1 boundary, remaining platform-specific findings, and handoff contracts required by phase 2.
+- [x] 5.2 Verify phase-1 build and runtime configuration contains no network client, child-process launcher, model provider, scanner, patch writer, or project write handler.
+- [x] 5.3 Add macOS/Windows CI coverage and a platform acceptance checklist for startup, unavailable private data directory, and unavailable credential-facility scenarios.
+- [ ] 5.4 Run the platform acceptance checklist against a packaged application on macOS Apple Silicon and a real Windows 11 x64 environment, and retain the evidence.
+- [x] 5.5 Document the verified phase-1 boundary, remaining platform-specific findings, and handoff contracts required by phase 2.

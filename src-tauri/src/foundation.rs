@@ -16,4 +16,8 @@ impl PhaseOneRuntime {
     pub fn project_access_active(&self) -> bool { false }
     pub fn network_enabled(&self) -> bool { false }
     pub fn process_execution_enabled(&self) -> bool { false }
+    pub fn model_provider_enabled(&self) -> bool { false }
+    pub fn scanner_enabled(&self) -> bool { false }
+    pub fn project_write_enabled(&self) -> bool { false }
+    pub fn patch_application_enabled(&self) -> bool { false }
 }

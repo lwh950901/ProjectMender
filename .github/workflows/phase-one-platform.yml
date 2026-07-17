@@ -1,0 +1,27 @@
+name: Phase 1 platform verification
+
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    name: ${{ matrix.os }} verification
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v22
+        with:
+          node-version: 22
+          cache: npm
+      - uses: dtolnay/rust-toolchain@stable
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+      - run: cargo test --manifest-path src-tauri/Cargo.toml --locked
+      - run: npm exec tauri build -- --no-bundle
