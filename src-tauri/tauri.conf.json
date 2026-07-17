@@ -16,7 +16,7 @@
   "bundle": {
     "active": true,
     "targets": ["app", "dmg", "msi"],
-    "icon": ["icons/icon.png"],
+    "icon": ["icons/icon.ico", "icons/icon.png"],
     "macOS": { "minimumSystemVersion": "11.0" },
     "windows": { "wix": { "language": "en-US" } }
   }
