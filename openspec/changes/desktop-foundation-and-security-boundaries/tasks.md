@@ -33,5 +33,6 @@
 - [x] 5.1 Configure the Tauri command and capability surface so only phase-1 approved commands are reachable from the UI.
 - [x] 5.2 Verify phase-1 build and runtime configuration contains no network client, child-process launcher, model provider, scanner, patch writer, or project write handler.
 - [x] 5.3 Add macOS/Windows CI coverage and a platform acceptance checklist for startup, unavailable private data directory, and unavailable credential-facility scenarios.
-- [ ] 5.4 Run the platform acceptance checklist against a packaged application on macOS Apple Silicon and a real Windows 11 x64 environment, and retain the evidence.
-- [x] 5.5 Document the verified phase-1 boundary, remaining platform-specific findings, and handoff contracts required by phase 2.
+- [x] 5.4 Run the Windows 10 x64 platform acceptance checklist against a packaged application, recording the operating-system version and retaining the evidence.
+- [ ] 5.5 Run the macOS Apple Silicon platform acceptance checklist against a packaged application, recording the operating-system version and retaining the evidence.
+- [x] 5.6 Document the verified phase-1 boundary, remaining platform-specific findings, and handoff contracts required by phase 2.

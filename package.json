@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
-    "test": "vitest run",
+    "build": "tsc -b && vite build --config vite.config.js --configLoader native",
+    "test": "vitest run --config vite.config.js --configLoader runner",
     "test:watch": "vitest"
   },
   "dependencies": {

@@ -14,8 +14,8 @@
 ## Cross-platform verification status
 
 - `.github/workflows/phase-one-platform.yml` runs frontend tests, Rust tests, and no-bundle Tauri builds on macOS and Windows GitHub-hosted runners.
-- `docs/phase-1-platform-acceptance.md` defines the required packaged-application acceptance evidence for macOS Apple Silicon and Windows 11 x64.
-- A real Windows 11 x64 packaged-application run remains outstanding and must be recorded before Phase 1 task 5.4 can be completed.
+- `docs/phase-1-platform-acceptance.md` defines the required packaged-application acceptance evidence for macOS Apple Silicon and a recorded Windows 10 x64 baseline environment.
+- A real Windows 11 x64 packaged-application rerun remains outstanding in the separate `windows-11-x64-platform-validation` change.
 
 ## Phase 2 handoff contracts
 
@@ -25,4 +25,4 @@
 
 ## Platform finding
 
-The automated suite and a no-bundle desktop build have run on macOS Apple Silicon. Windows CI coverage is configured, but real Windows 11 x64 packaging and credential-facility scenarios remain a release-platform verification task and are deliberately not asserted as locally verified.
+The automated suite and a no-bundle desktop build have run on macOS Apple Silicon. Windows CI coverage is configured. A Windows 10 x64 packaged-application baseline must record its exact OS version; Windows 11-specific packaging and credential-facility scenarios remain the separate `windows-11-x64-platform-validation` follow-up and are deliberately not asserted as locally verified.
